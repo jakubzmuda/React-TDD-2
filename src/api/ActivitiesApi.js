@@ -3,7 +3,7 @@ export class ActivitiesApi {
     this.ajax = ajax;
   }
 
-  getActivities() {
+  fetchActivities() {
     return this.ajax({
       method: 'GET',
       url: 'https://www.boredapi.com/api/activity'

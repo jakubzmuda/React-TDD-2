@@ -1,3 +1,6 @@
+import activityEpic from './activityEpic';
 import { combineEpics } from 'redux-observable';
 
-export default combineEpics();
+export default combineEpics(
+  ...activityEpic
+)
