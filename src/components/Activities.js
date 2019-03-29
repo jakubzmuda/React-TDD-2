@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class App extends Component {
+class Activities extends Component {
   render() {
     return (
       <div></div>
@@ -8,4 +8,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Activities;
