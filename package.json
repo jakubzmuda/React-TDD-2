@@ -9,7 +9,8 @@
     "react-observable": "^1.1.3",
     "react-redux": "^6.0.1",
     "react-scripts": "2.1.8",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-observable": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
