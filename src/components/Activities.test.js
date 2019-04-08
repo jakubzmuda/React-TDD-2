@@ -16,6 +16,7 @@ describe('Activities component', () => {
 
   it('should call for activities and display them', () => {
     const ajax = respondWithActivity('Learn how to whistle with your fingers');
+
     const component = mountComponent({ ajax: ajax });
 
     component.find('[data-test="random-activity-button"]').simulate('click');
@@ -23,10 +24,10 @@ describe('Activities component', () => {
     expect(component.find('[data-test="activity-entry"]')).toHaveText('Learn how to whistle with your fingers')
   });
 
-  const mountComponent = (stateProperties) => mount(<Provider store={createStoreForTest(stateProperties)}><Activities/></Provider>);
+  const mountComponent = (storeProperties) => mount(<Provider store={createStoreForTest(storeProperties)}><Activities/></Provider>);
 
   const respondWithActivity = (activityName) => AjaxStub.newStub().success({
     url: 'https://www.boredapi.com/api/activity',
     method: 'GET'
-  }, { activities: activityName });
+  }, { activity: activityName });
 });

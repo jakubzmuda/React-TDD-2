@@ -7,7 +7,7 @@ export const fetchRandomActivity = (action$, store, { activitiesApi }) =>
   .mergeMap(action => {
     return activitiesApi.fetchActivities()
       .map(result => fetchRandomActivitySuccess(result.response))
-  })
+  });
 
 export default [
   fetchRandomActivity
