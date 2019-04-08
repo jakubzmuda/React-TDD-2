@@ -1,4 +1,4 @@
-import { ActivityType as ActionType, fetchRandomActivitySuccess } from '../actions/actions';
+import { ActionType, fetchRandomActivitySuccess } from '../actions/actions';
 import 'rxjs/add/operator/mergeMap'
 
 export const fetchRandomActivity = (action$, store, { activitiesApi }) =>
