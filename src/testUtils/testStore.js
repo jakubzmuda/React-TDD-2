@@ -6,10 +6,10 @@ import { buildFullState } from './stateBuilder';
 import AjaxStub from './ajaxStub';
 import { ActivitiesApi } from '../api/ActivitiesApi';
 
-export const createStoreForTest = ({ state = {}, ajax = AjaxStub.newStub()} = {}) => {
+export const createStoreForTest = ({ initialState = buildFullState(), ajax = AjaxStub.newStub()} = {}) => {
   const activitiesApi = new ActivitiesApi(ajax.instance());
   const epicMiddleware = createEpicMiddleware({ dependencies: { activitiesApi } });
-  const store = createStore(reducers, buildFullState(state), applyMiddleware(epicMiddleware));
+  const store = createStore(reducers, initialState, applyMiddleware(epicMiddleware));
 
   epicMiddleware.run(rootEpic);
 

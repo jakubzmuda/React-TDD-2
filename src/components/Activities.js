@@ -11,22 +11,19 @@ class Activities extends Component {
           onClick={() => this.props.fetchRandomActivity()}>
           Random activity
         </button>
-        {this.renderActivity()}
+        {this.props.activities.map(entry => this.renderActivity(entry))}
       </div>
     );
   }
 
-  renderActivity () {
-    if (this.props.activityEntry) {
-      return <div data-test="activity-entry">{this.props.activityEntry.activity}</div>
-    }
-    return <div data-test="activity-placeholder">Plz click the button</div>
+  renderActivity (entry) {
+    return <div key={entry.activity} data-test="activity-entry">{entry.activity}</div>
   }
 }
 
 const mapStateToProps = (state) => {
   return ({
-    activityEntry: state.activities.entry
+    activities: state.activities
   });
 };
 
