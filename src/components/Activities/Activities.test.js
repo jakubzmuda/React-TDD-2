@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Activities from './Activities';
-import { createStoreForTest } from '../testUtils/testStore';
-import AjaxStub from '../testUtils/ajaxStub';
+import { createStoreForTest } from '../../testUtils/testStore';
+import AjaxStub from '../../testUtils/ajaxStub';
 import { Provider } from 'react-redux';
-import { buildFullState, withActivities } from "../testUtils/stateBuilder";
+import { buildFullState, withActivities } from "../../testUtils/stateBuilder";
 
 describe('Activities component', () => {
 

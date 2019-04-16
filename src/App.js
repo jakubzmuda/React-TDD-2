@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Activities from './components/Activities';
+import Activities from './components/Activities/Activities';
 import { Provider } from 'react-redux';
 import setupStore from './store'
 
