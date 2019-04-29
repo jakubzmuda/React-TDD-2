@@ -3056,6 +3056,10 @@ enzyme-adapter-utils@^1.10.1:
     prop-types "^15.7.2"
     semver "^5.6.0"
 
+enzyme-custom-wrappers@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/enzyme-custom-wrappers/-/enzyme-custom-wrappers-1.0.0.tgz#8be2ac66d8efbc3a7f7d86e6457ea49b3a17046e"
+
 enzyme-matchers@^7.0.2:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/enzyme-matchers/-/enzyme-matchers-7.0.2.tgz#fe47f2cb54f8b0c5a3f0e515faf8131c188f613a"
