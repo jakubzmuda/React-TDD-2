@@ -6,20 +6,16 @@ import './Activities.css';
 class Activities extends Component {
   render () {
     return (
-      <div className={'star-wars'}>
-        <div className={'crawl'}>
-          <div className={'title'}>
-            <p>React TDD</p>
-            <p>Now, click that button!</p>
-          </div>
-          {this.props.activities.map(entry => this.renderActivity(entry))}
-        </div>
+      <div className={'container'}>
         <button
           className={'random-activity-button'}
           data-test="random-activity-button"
           onClick={() => this.props.fetchRandomActivity()}>
           Random activity
         </button>
+        <div className={'activities'}>
+          {this.props.activities.map(entry => this.renderActivity(entry))}
+        </div>
       </div>
     );
   }
