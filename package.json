@@ -2,7 +2,9 @@
   "name": "react-tdd-2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kubaue.github.io/React-TDD-2",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -14,12 +16,6 @@
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
   "devDependencies": {
     "chalk": "^2.4.2",
     "enzyme": "^3.9.0",
@@ -27,6 +23,14 @@
     "enzyme-custom-wrappers": "^1.0.0",
     "jest-enzyme": "^7.0.2",
     "sinon": "^7.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
