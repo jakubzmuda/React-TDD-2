@@ -1,13 +1,15 @@
 import { ActionType, fetchRandomActivitySuccess } from '../actions/actions';
-import 'rxjs/add/operator/mergeMap'
-import 'rxjs/add/operator/map'
+import { of } from 'rxjs'
+import { mergeMap, switchMap } from 'rxjs/operators'
+import { ofType } from 'redux-observable'
 
 export const fetchRandomActivity = (action$, store, { activitiesApi }) =>
- action$.ofType(ActionType.FETCH_RANDOM_ACTIVITY)
-  .mergeMap(action => {
-    return activitiesApi.fetchActivities()
-      .map(result => fetchRandomActivitySuccess(result.response))
-  });
+  action$.pipe(
+    ofType(ActionType.FETCH_RANDOM_ACTIVITY),
+    switchMap(() => activitiesApi.fetchActivities().pipe(
+      mergeMap(result => of(fetchRandomActivitySuccess(result.response))),
+    ))
+  );
 
 export default [
   fetchRandomActivity
